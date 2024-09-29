@@ -1,0 +1,227 @@
+body {
+    background-image: url('images/background.png');
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Tohama, sans-serif;
+    font-size: 8pt;
+}
+
+header {
+    text-align: center;
+    height: 50px;
+    position: relative;
+}
+
+#banner-background {
+    background-image: url('images/bannerbackground.png');
+    background-repeat: repeat-x;
+    height: 50px;
+    position: absolute;
+    width: 100%;
+}
+
+#banner-image {
+    position: relative;
+    height: 50px;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 24pt;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#content-area {
+    /*flexbox ensures elements within content-area content will automatically stay inside the parent container so they don't collapse */
+    display: flex;
+    flex-direction: column;
+    /*makes the items (content area and review bar ) stack on top of each vertically from top to bottom */
+    width: 800px;
+    margin: 0 auto;
+    /*top and bottom margins set to zero and horizontally centered*/
+    border: 4px solid gray;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+#columns-container {
+    display: flex;
+    width: 100%;
+    /*takes up full width*/
+    margin-bottom: -1px;
+}
+
+#left-column {
+    width: 550px;
+    margin-right: auto;
+    /*ensures right column will take up the rest of the space*/
+}
+
+#rotten-score {
+    background-image: url(images/rottenbackground.png);
+    background-repeat: repeat-x;
+    position: relative;
+    /*the containing block for absolutely positioned elements*/
+
+}
+
+.rating {
+    text-align: center;
+    color: white;
+    /*positiion it relative to #rotten-score*/
+    position: absolute;
+    /*adjusting how far left and how high the rating div goes*/
+    top: -40%;
+    left: 45%;
+    /*centering the rating div within the parent container (rotten-score div)*/
+    transform: translate(-50%, 50%);
+}
+
+.percentage {
+    font-size: 48pt;
+    font-weight: bold;
+    color: red;
+}
+
+.review-count {
+    font-size: 8pt;
+}
+
+#reviews {
+    display: grid;
+    /*so the children (review-boxes) are grid items (columns)*/
+    grid-template-columns: 47% 47%;
+    /*two columns with each column taking up 47% of the width*/
+    gap: 2%;
+    /*row and column gap 2%*/
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 35px;
+}
+
+.review-container {
+    display: flex;
+    /*flexbox so we can layer content items vertically*/
+    flex-direction: column;
+    /*items (review-box and critic-info) are vertically layed out/stacked top to bottom*/
+    margin-bottom: 20px;
+}
+
+.review-box {
+    background-color: #E1d697;
+    border: 2px solid gray;
+    padding: 8px;
+}
+
+.review-box img:first-child {
+    float: left;
+    /*makes the image float to the left, allowing text to wrap around it*/
+    margin-right: 5px;
+}
+
+.review-content {
+    font-weight: bold;
+    margin: 0;
+    display: block;
+    /*ensures the text wraps correctly */
+}
+
+.critic-info {
+    display: flex;
+    align-items: center;
+    /*items vertically centered*/
+    margin-top: 10px;
+}
+
+.critic-info img {
+    margin-right: 5px;
+}
+
+.critic-details {
+    display: flex;
+    /*being a flexbox ensures the content/elements within it stay inside*/
+    flex-direction: column;
+    /*name and publication (children elements in critic-details flexbox div) are layed out in vertical direction from top to bottom*/
+}
+
+.critic-name {
+    margin: 0;
+}
+
+.critic-publication {
+    font-style: italic;
+    font-size: 8pt;
+    margin: 0;
+}
+
+#right-column {
+    width: 250px;
+    /*aligns the right coluumn to the right*/
+    background-color: #A2B964;
+    box-sizing: border-box;
+    /*border-box accounts for any border and padding in the values specified for the individual elements's widths and heights*/
+}
+
+.general-overview {
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
+    color: black;
+}
+
+.overview-poster {
+    width: 100%;
+}
+
+dl {
+    margin: 0;
+    padding: 10px;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+dd {
+    margin-bottom: 10px;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+#bar {
+    background-color: #A2B964;
+    text-align: center;
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
+    clear: both
+        /*ensures the bar div sits below the floating columns*/
+}
+
+#w3c-validators {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+#w3c-validators a {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#w3c-validators img {
+    width: 88px;
+    height: auto;
+}
